@@ -8,3 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.active img {
+  filter: brightness(0) invert(1);
+}

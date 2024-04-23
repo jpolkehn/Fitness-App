@@ -36,8 +36,8 @@ function Programme() {
 
         {data.programs.map((program) => (
           <div className="text-white m-6 text-3xl " key={program.id}>
-            <div className="mb-16">
-              <button className="h-16 bg-emerald-100 rounded-xl text-blue-950">
+            <div className="mb-16 text-center">
+              <button className="h-24 w-64 bg-emerald-100 rounded-xl text-blue-950">
                 <a href="#">{program.name}</a>
               </button>
             </div>

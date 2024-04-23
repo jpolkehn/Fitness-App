@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header>
-      <h1 className="text-white font-bold text-size-xxl text-left ">
+      <h1 className=" p-4 text-white font-bold text-size-xxl text-left ">
         Hallo {description}!
       </h1>
       <br></br>
