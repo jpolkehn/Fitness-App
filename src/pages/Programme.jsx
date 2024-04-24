@@ -1,5 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import Navigation from "../components/Navigation";
+import OverviewButton from "../components/OverviewButton";
+import getNextClass from "../components/colorWheel";
 
 const GET_PROGRAMS = gql`
   query GetPrograms {
@@ -30,28 +32,19 @@ function Programme() {
   // Define the array of gradient classes in the desired order
 
   return (
-    <>
-      <div>
-        <div className="text-white text-3xl m-6 text-decoration-line: underline">
-          Programme:{" "}
-        </div>
-        <br></br>
-
-        {data.programs.map((program, index) => (
-          <div className="text-white m-6 text-3xl " key={program.id}>
-            <div className="mb-16 text-center">
-              {/* Apply the gradient class based on index */}
-              <button className="h-24 w-64 rounded-xl text-black bg-gradient-to-br from-fitness-color-turkis to-fitness-color-light-green">
-                <a href="#">{program.name}</a>
-              </button>
-            </div>
-            <div>
-              <Navigation />
-            </div>
-          </div>
+    <div className="p-4">
+      <h1 className="mb-32 text-white text-3xl pb-">Programme</h1>
+      <div className="text-center mb-16">
+        {data.programs.map((program) => (
+          <OverviewButton
+            key={program.id}
+            title={program.name}
+            className={getNextClass()}
+          />
         ))}
+        <Navigation />
       </div>
-    </>
+    </div>
   );
 }
 
