@@ -18,6 +18,7 @@ const GET_PROGRAMS = gql`
     }
   }
 `;
+
 function Programme() {
   const { loading, error, data } = useQuery(GET_PROGRAMS);
 
@@ -25,6 +26,8 @@ function Programme() {
   if (error) return <p>Error : {error.message}</p>;
 
   console.log(data);
+
+  // Define the array of gradient classes in the desired order
 
   return (
     <>
@@ -34,10 +37,11 @@ function Programme() {
         </div>
         <br></br>
 
-        {data.programs.map((program) => (
+        {data.programs.map((program, index) => (
           <div className="text-white m-6 text-3xl " key={program.id}>
             <div className="mb-16 text-center">
-              <button className="h-24 w-64 bg-emerald-100 rounded-xl text-blue-950">
+              {/* Apply the gradient class based on index */}
+              <button className="h-24 w-64 rounded-xl text-black bg-gradient-to-br from-fitness-color-turkis to-fitness-color-light-green">
                 <a href="#">{program.name}</a>
               </button>
             </div>
@@ -50,4 +54,5 @@ function Programme() {
     </>
   );
 }
+
 export default Programme;

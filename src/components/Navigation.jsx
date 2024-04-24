@@ -9,9 +9,8 @@ import profil_white from "../Images/profil_white.svg";
 import "../index.css";
 
 const Navigation = () => {
-  const location = useLocation(); // Hook von react-router-dom, um den aktuellen Pfad zu erhalten
+  const location = useLocation();
 
-  // Funktion, um zu überprüfen, ob der angegebene Pfad aktiv ist
   const isActive = (pathname) => {
     return location.pathname === pathname;
   };
