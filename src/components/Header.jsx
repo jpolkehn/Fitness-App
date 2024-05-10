@@ -7,6 +7,7 @@ const reactDescriptions = [
   "Sportliebhaber",
   "Athlet",
   "Sportler",
+  "Held",
 ];
 
 function genRandomInt(max) {
@@ -14,7 +15,7 @@ function genRandomInt(max) {
 }
 
 export default function Header() {
-  const description = reactDescriptions[genRandomInt(5)];
+  const description = reactDescriptions[genRandomInt(6)];
 
   return (
     <header>
